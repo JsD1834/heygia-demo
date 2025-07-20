@@ -1,0 +1,6 @@
+@HeyGiaDemo_HostAddress = http://localhost:5258
+
+GET {{HeyGiaDemo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
