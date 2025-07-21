@@ -7,7 +7,7 @@ using System;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<HeyGiaDemoDbContext>(opt =>
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Servicios
 builder.Services.AddSingleton<LeadScoringService>();

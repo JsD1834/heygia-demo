@@ -15,13 +15,13 @@ namespace HeyGiaDemo.Migrations
                 name: "Conversations",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ExternalUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LeadStatus = table.Column<int>(type: "int", nullable: false),
-                    LeadScore = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
-                    UpdatedAt = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ExternalUserId = table.Column<string>(type: "TEXT", nullable: true),
+                    LeadStatus = table.Column<int>(type: "INTEGER", nullable: false),
+                    LeadScore = table.Column<int>(type: "INTEGER", nullable: false),
+                    CreatedAt = table.Column<DateTimeOffset>(type: "TEXT", nullable: false),
+                    UpdatedAt = table.Column<DateTimeOffset>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -32,12 +32,12 @@ namespace HeyGiaDemo.Migrations
                 name: "ChatMessages",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ConversationId = table.Column<int>(type: "int", nullable: false),
-                    FromUser = table.Column<bool>(type: "bit", nullable: false),
-                    Text = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Timestamp = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ConversationId = table.Column<int>(type: "INTEGER", nullable: false),
+                    FromUser = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Text = table.Column<string>(type: "TEXT", nullable: false),
+                    Timestamp = table.Column<DateTimeOffset>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

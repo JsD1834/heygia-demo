@@ -15,7 +15,7 @@ namespace HeyGiaDemo.Context
                 .Build();
 
             var connectionString = config.GetConnectionString("DefaultConnection");
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlite(connectionString);
 
             return new HeyGiaDemoDbContext(optionsBuilder.Options);
         }
